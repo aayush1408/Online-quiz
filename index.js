@@ -18,4 +18,12 @@ io.sockets.on('connection', (socket) => {
         console.log(data);
         socket.broadcast.emit('rock', data);
     });
+    socket.on('paper', (data) => {
+        console.log(data);
+        socket.broadcast.emit('paper', data);
+    });
+    socket.on('scissor', (data) => {
+        console.log(data);
+        socket.broadcast.emit('scissor', data);
+    });
 });
