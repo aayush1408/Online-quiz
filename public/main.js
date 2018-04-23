@@ -23,15 +23,15 @@ scissor.addEventListener('click', () => {
 //Listen for events
 socket.on('rock', (data) => {
     console.log(data);
-    opponent.innerHTML = data.data;
+    opponent.innerHTML = 'Opponent : ' + data.data;
 });
 
 socket.on('scissor', (data) => {
     console.log(data);
-    opponent.innerHTML = data.data;
+    opponent.innerHTML = 'Opponent : ' + data.data;
 });
 
 socket.on('paper', (data) => {
     console.log(data);
-    opponent.innerHTML = data.data;
+    opponent.innerHTML = 'Opponent : ' + data.data;
 });
