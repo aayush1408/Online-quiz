@@ -6,7 +6,7 @@ const opponent = document.getElementById('opponent');
 const yourself = document.getElementById('yourself');
 const winner = document.getElementById('result');
 
-
+//Send events
 rock.addEventListener('click', () => {
     socket.emit('rock', { data: 'Rock' });
     yourself.innerHTML = 'Rock';
@@ -26,25 +26,23 @@ scissor.addEventListener('click', () => {
 socket.on('rock', (data) => {
     console.log(data);
     opponent.innerHTML = data.data;
-    // result(data.data);
 });
 
 socket.on('scissor', (data) => {
     console.log(data);
     opponent.innerHTML = data.data;
-    // result(data.data);
 });
 
 socket.on('paper', (data) => {
     console.log(data);
     opponent.innerHTML = data.data;
-    // result(data.data);
 });
 
 //Finding the winner
 setTimeout(
     function () {
         if (opponent.innerHTML !== '' && yourself.innerHTML !== '') {
+            opponent.style.visibility = 'visible';
             (function () {
                 let opponentValue = opponent.innerHTML;
                 let yourChoice = yourself.innerHTML;
